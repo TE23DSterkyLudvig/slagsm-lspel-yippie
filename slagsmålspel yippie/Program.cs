@@ -4,10 +4,7 @@ String name2 = "Felix";
 int Hp1 = 100;
 int Hp2 = 100;
 
-
-Random generator = new Random();
-
-System.Console.WriteLine(@$"{name1} och {name2} ska slåss.
+Console.WriteLine(@$"{name1} och {name2} ska slåss.
 Tryck på enter för att börja spelet");
 var key = Console.ReadKey(true);
 if (key.Key == ConsoleKey.Enter)
@@ -27,8 +24,8 @@ if (key.Key == ConsoleKey.Enter)
         Hp1 = Math.Max(0, Hp1);
         Hp2 = Math.Max(0, Hp2);
 
-        System.Console.WriteLine($"Ludde har {Hp1} hälsa kvar.");
-        System.Console.WriteLine($"Felix har {Hp2} hälsa kvar");
+        Console.WriteLine($"Ludde har {Hp1} hälsa kvar.");
+        Console.WriteLine($"Felix har {Hp2} hälsa kvar");
 
         Console.ReadLine();
     }
