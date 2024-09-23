@@ -12,7 +12,7 @@ Tryck på enter för att börja spelet");
 var key = Console.ReadKey(true);
 if (key.Key == ConsoleKey.Enter)
 {
-    while (Hp1 > 0 || Hp2 > 0)
+    while (Hp1 > 0 && Hp2 > 0)
     {
         int skada1 = Random.Shared.Next(5, 35);
         int skada2 = Random.Shared.Next(2, 40);
@@ -27,6 +27,9 @@ if (key.Key == ConsoleKey.Enter)
         Hp1 = Math.Max(0, Hp1);
         Hp2 = Math.Max(0, Hp2);
 
+        System.Console.WriteLine($"Ludde har {Hp1} hälsa kvar.");
+        System.Console.WriteLine($"Felix har {Hp2} hälsa kvar");
+
         Console.ReadLine();
     }
 }
@@ -34,9 +37,9 @@ if (key.Key == ConsoleKey.Enter)
 if (Hp2 <= 0)
 {
     System.Console.WriteLine($" Ludde van med {Hp1} hälsa kvar ");
-    System.Console.WriteLine("Tryck på S för att avsluta spelet");
+    System.Console.WriteLine("Tryck på enter för att avsluta spelet");
     var stopp = Console.ReadKey(true);
-    if (stopp.Key == ConsoleKey.S)
+    if (stopp.Key == ConsoleKey.Enter)
     {
         Environment.Exit(0);
     }
@@ -45,10 +48,19 @@ if (Hp2 <= 0)
 if (Hp1 <= 0)
 {
     System.Console.WriteLine($" Felix van med {Hp2} hälsa kvar ");
-    System.Console.WriteLine("Tryck på S för att avsluta spelet");
+    System.Console.WriteLine("Tryck på enter för att avsluta spelet");
     var stopp = Console.ReadKey(true);
-    if (stopp.Key == ConsoleKey.S)
+    if (stopp.Key == ConsoleKey.Enter)
     {
+        Environment.Exit(0);
+    }
+}
+
+if (Hp1 == 0 && Hp2 == 0 ){
+    System.Console.WriteLine(" Ingen vann för att båda dog.");
+    System.Console.WriteLine(" Tryck på enter för att avsluta spelet.");
+    var stopp = Console.ReadKey(true);
+    if (stopp.Key == ConsoleKey.Enter){
         Environment.Exit(0);
     }
 }
